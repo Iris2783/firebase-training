@@ -40,4 +40,31 @@ main.dart内にて以下のコードを記述　※添付のリンクからコ�
 5. Firestore Databaseの構築
 
 　構築 > Firestore Database > テスト環境を選択 > リージョンを設定 > 有効
+ 
+ 6. flutter pub add cloud_firestoreの実行
+ 
+ 7. サンプルメモアプリの作成
+ 
+ ※　細かい実装内容はコード内のコメントを参照
+
+ 
+【検索記事】
+> Running pod installに時間がかかる件についての解消法
+
+https://stackoverflow.com/questions/64144204/flutter-running-pod-install-takes-forever-while-building-in-debug-mode
+
+> Firebaseと連携するとXcodeのビルドが著しく遅くなる件についての解消法
+
+https://zenn.dev/nagaho/articles/012e9ac3b0dfd1
+
+https://github.com/invertase/firestore-ios-sdk-frameworks
+
+> Evaluation of this constant expression throws an exception.のエラーについて　
+
+※親ウィジェットにconstが入っていると起きるエラー。子ウィジェットで変数を定義しているのに親ウィジェットで定数を指定してしまっているため。
+
+https://qiita.com/umi_mori/items/f193af553108344b97fb
+
+
+
 
