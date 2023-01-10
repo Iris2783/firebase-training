@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "75037196994",
+    "project_id": "fir-memo-app-d448a",
+    "storage_bucket": "fir-memo-app-d448a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75037196994:android:5209eec173459d202c715b",
+        "android_client_info": {
+          "package_name": "com.example.firebase_training"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75037196994-ep321np20p955csp11k0kbvkvuooaiel.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnJI8Ff2PAKVg5zbcOVuqCiJyxUsy-g0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75037196994-ep321np20p955csp11k0kbvkvuooaiel.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
