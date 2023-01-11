@@ -14,7 +14,12 @@ class TopPage extends StatefulWidget {
 }
 
 class _TopPageState extends State<TopPage> {
-  final memoCollection = FirebaseFirestore.instance.collection('memo');
+  final memoCollection = FirebaseFirestore.instance.collection('memo'); //FirebaseのMemoコレクションにアクセスするための記述
+
+  Future<void> deleteMemo(String id) async {
+    final doc = FirebaseFirestore.instance.collection('memo').doc(id); //Memoコレクションのドキュメントにアクセス 引数にString idを持ってきて、そのidを削除するようにする
+    await doc.delete();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +32,9 @@ class _TopPageState extends State<TopPage> {
       //こうしたいつ、どこで、どんなイベントが発生するか分からないイベントを Stream （データの流れ）と考えることができます。
       //Flutter では Stream を扱う場合には StreamBuilder を使用します。
       body: StreamBuilder<QuerySnapshot>(
-          stream: memoCollection.snapshots(), //memoCollectionで記述した処理が実行(または何かしらの変更が加わる)される度ににListView.builderの処理が行われる　つまり内容が処理に沿ってリアルタイムに再描画されていく
+          stream: memoCollection
+              .orderBy('createdDate', descending: true)
+              .snapshots(), //memoCollectionで記述した処理が実行(または何かしらの変更が加わる)される度にListView.builderの処理が行われる　つまり内容が処理に沿ってリアルタイムに再描画されていく orderByを使うことで並び替えが可能。今回はcreatedDateで並び替えている 今回はtrueで新しい順　falseで古い順に表示させている
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               //もし、読み込み中となる場合はぐるぐる回るやつを表示させる
@@ -84,7 +91,10 @@ class _TopPageState extends State<TopPage> {
                                   title: const Text('編集'),
                                 ),
                                 ListTile(
-                                  onTap: () {},
+                                  onTap: () async {
+                                    await deleteMemo(fetchMemo.id); //選択したメモをidで検出して削除する
+                                    Navigator.pop(context);
+                                  },
                                   leading: const Icon(Icons.delete),
                                   title: const Text('削除'),
                                 ),
