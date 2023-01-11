@@ -3,7 +3,6 @@ import 'package:firebase_training/firebase_options.dart';
 import 'package:firebase_training/pages/top_page.dart';
 import 'package:flutter/material.dart';
 
-
 //Firebaseとの連携を以下に記述。以下のコードを含みアプリがビルドで切ればFirebaseとの連携が完了していることを意味する。
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
